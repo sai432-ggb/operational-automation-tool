@@ -9,13 +9,13 @@ from datetime import datetime
 from pathlib import Path
 import logging
 
-from config.settings import get_settings
-from config.logging_config import setup_logging, get_logger
-from automation.data_cleaner import DataCleaner
-from automation.report_generator import ReportGenerator
-from automation.system_health_checker import SystemHealthChecker
-from models.data_models import AutomationReport
-from utils.email_notifier import EmailNotifier
+from src.config.settings import get_settings
+from src.config.logging_config import setup_logging, get_logger
+from src.automation.data_cleaner import DataCleaner
+from src.automation.report_generator import ReportGenerator
+from src.automation.system_health_checker import SystemHealthChecker
+from src.models.data_models import AutomationReport
+from src.utils.email_notifier import EmailNotifier
 
 
 def parse_arguments():
@@ -342,4 +342,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main(
+    main()
