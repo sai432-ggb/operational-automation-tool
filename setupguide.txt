@@ -1,0 +1,660 @@
+# VS Code Setup Guide - Complete Step-by-Step Instructions
+
+## Prerequisites
+
+Before starting, make sure you have:
+- VS Code installed
+-  Python 3.8+ installed
+-  Git installed (for GitHub upload)
+
+---
+
+## Step 1: Create Project Folder
+
+1. **Open VS Code**
+2. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (Mac)
+3. Type "Open Folder" and select it
+4. Navigate to where you want to create your project
+5. Click "New Folder"
+6. Name it: `operational-automation-tool`
+7. Click "Select Folder"
+
+---
+
+## Step 2: Open Integrated Terminal
+
+1. In VS Code, press `` Ctrl+` `` (backtick) or go to **View → Terminal**
+2. You should see a terminal at the bottom of VS Code
+
+---
+
+## Step 3: Create Folder Structure
+
+**Copy and paste this into the terminal** (all at once):
+
+### For Windows (PowerShell):
+```powershell
+# Create all directories
+New-Item -ItemType Directory -Force -Path ".github\workflows"
+New-Item -ItemType Directory -Force -Path "src\config"
+New-Item -ItemType Directory -Force -Path "src\automation"
+New-Item -ItemType Directory -Force -Path "src\utils"
+New-Item -ItemType Directory -Force -Path "src\models"
+New-Item -ItemType Directory -Force -Path "tests\fixtures"
+New-Item -ItemType Directory -Force -Path "data\input"
+New-Item -ItemType Directory -Force -Path "data\output"
+New-Item -ItemType Directory -Force -Path "data\logs"
+New-Item -ItemType Directory -Force -Path "docs"
+New-Item -ItemType Directory -Force -Path "scripts"
+New-Item -ItemType Directory -Force -Path "config"
+
+# Create .gitkeep files
+New-Item -ItemType File -Force -Path "data\input\.gitkeep"
+New-Item -ItemType File -Force -Path "data\output\.gitkeep"
+New-Item -ItemType File -Force -Path "data\logs\.gitkeep"
+
+echo "Folder structure created successfully!"
+```
+
+### For Mac/Linux (Bash):
+```bash
+# Create all directories
+mkdir -p .github/workflows
+mkdir -p src/{config,automation,utils,models}
+mkdir -p tests/fixtures
+mkdir -p data/{input,output,logs}
+mkdir -p docs
+mkdir -p scripts
+mkdir -p config
+
+# Create .gitkeep files
+touch data/input/.gitkeep
+touch data/output/.gitkeep
+touch data/logs/.gitkeep
+
+echo "Folder structure created successfully!"
+```
+
+---
+
+## Step 4: Create Files One by One
+
+Now we'll create each file. **Follow these steps for EACH file:**
+
+### How to Create a File:
+
+1. **In VS Code Explorer** (left sidebar), right-click on the folder
+2. Select **"New File"**
+3. Type the filename (see list below)
+4. Press Enter
+5. **Copy the code from the artifacts** and paste it into the file
+6. Press `Ctrl+S` (Windows/Linux) or `Cmd+S` (Mac) to save
+
+---
+
+## Step 5: Root Directory Files
+
+Create these files in the **ROOT** directory (right-click on the project name):
+
+### File 1: `README.md`
+- Right-click project folder → New File → Type `README.md`
+- Copy content from **BATCH 1** (README.md section)
+- Save
+
+### File 2: `.gitignore`
+- New File → Type `.gitignore`
+- Copy content from **BATCH 1** (.gitignore section)
+- Save
+
+### File 3: `.env.example`
+- New File → Type `.env.example`
+- Copy content from **BATCH 1** (.env.example section)
+- Save
+
+### File 4: `requirements.txt`
+- New File → Type `requirements.txt`
+- Copy content from **BATCH 1** (requirements.txt section)
+- Save
+
+### File 5: `requirements-dev.txt`
+- New File → Type `requirements-dev.txt`
+- Copy content from **BATCH 1**
+- Save
+
+### File 6: `setup.py`
+- New File → Type `setup.py`
+- Copy content from **BATCH 1**
+- Save
+
+### File 7: `pyproject.toml`
+- New File → Type `pyproject.toml`
+- Copy content from **BATCH 1**
+- Save
+
+### File 8: `pytest.ini`
+- New File → Type `pytest.ini`
+- Copy content from **BATCH 1**
+- Save
+
+### File 9: `.flake8`
+- New File → Type `.flake8`
+- Copy content from **BATCH 1**
+- Save
+
+### File 10: `.editorconfig`
+- New File → Type `.editorconfig`
+- Copy content from **BATCH 2**
+- Save
+
+### File 11: `.gitattributes`
+- New File → Type `.gitattributes`
+- Copy content from **BATCH 2**
+- Save
+
+### File 12: `.pre-commit-config.yaml`
+- New File → Type `.pre-commit-config.yaml`
+- Copy content from **BATCH 2**
+- Save
+
+### File 13: `Dockerfile`
+- New File → Type `Dockerfile`
+- Copy content from **BATCH 2**
+- Save
+
+### File 14: `.dockerignore`
+- New File → Type `.dockerignore`
+- Copy content from **BATCH 2**
+- Save
+
+### File 15: `CHANGELOG.md`
+- New File → Type `CHANGELOG.md`
+- Copy content from **BATCH 10**
+- Save
+
+### File 16: `LICENSE`
+- New File → Type `LICENSE`
+- Copy content from **BATCH 10**
+- Save
+
+### File 17: `CONTRIBUTING.md`
+- New File → Type `CONTRIBUTING.md`
+- Copy content from **BATCH 10**
+- Save
+
+---
+
+## Step 6: Config Folder Files
+
+**Right-click on `config` folder** → New File:
+
+### File 18: `config/config.example.yaml`
+- Copy content from **BATCH 2** (config.example.yaml)
+- Save
+
+---
+
+## Step 7: GitHub Workflows
+
+**Right-click on `.github/workflows` folder** → New File:
+
+### File 19: `.github/workflows/ci.yml`
+- Copy content from **BATCH 2** (ci.yml section)
+- Save
+
+### File 20: `.github/workflows/python-tests.yml`
+- Copy content from **BATCH 2** (python-tests.yml section)
+- Save
+
+---
+
+## Step 8: Source Code - Config Module
+
+**Right-click on `src` folder** → New File:
+
+### File 21: `src/__init__.py`
+- Copy content from **BATCH 3**
+- Save
+
+**Right-click on `src/config` folder** → New File:
+
+### File 22: `src/config/__init__.py`
+- Copy content from **BATCH 3**
+- Save
+
+### File 23: `src/config/settings.py`
+- Copy content from **BATCH 3**
+- Save
+
+### File 24: `src/config/logging_config.py`
+- Copy content from **BATCH 3**
+- Save
+
+---
+
+## Step 9: Source Code - Models
+
+**Right-click on `src/models` folder** → New File:
+
+### File 25: `src/models/__init__.py`
+- Copy content from **BATCH 4**
+- Save
+
+### File 26: `src/models/data_models.py`
+- Copy content from **BATCH 4**
+- Save
+
+---
+
+## Step 10: Source Code - Utils
+
+**Right-click on `src/utils` folder** → New File:
+
+### File 27: `src/utils/__init__.py`
+- Copy content from **BATCH 4**
+- Save
+
+### File 28: `src/utils/file_handler.py`
+- Copy content from **BATCH 4**
+- Save
+
+### File 29: `src/utils/validators.py`
+- Copy content from **BATCH 5**
+- Save
+
+### File 30: `src/utils/email_notifier.py`
+- Copy content from **BATCH 5**
+- Save
+
+---
+
+## Step 11: Source Code - Automation Modules
+
+**Right-click on `src/automation` folder** → New File:
+
+### File 31: `src/automation/__init__.py`
+- Copy content from **BATCH 6**
+- Save
+
+### File 32: `src/automation/data_cleaner.py`
+- Copy content from **BATCH 6**
+- Save
+
+### File 33: `src/automation/report_generator.py`
+- Copy content from **BATCH 7**
+- Save
+
+### File 34: `src/automation/system_health_checker.py`
+- Copy content from **BATCH 8**
+- Save
+
+---
+
+## Step 12: Main Entry Point
+
+**Right-click on `src` folder** → New File:
+
+### File 35: `src/main.py`
+- Copy content from **BATCH 9**
+- Save
+
+---
+
+## Step 13: Scripts
+
+**Right-click on `scripts` folder** → New File:
+
+### File 36: `scripts/run_automation.py`
+- Copy content from **BATCH 9**
+- Save
+
+### File 37: `scripts/setup.sh`
+- Copy content from **BATCH 9** (setup.sh section)
+- Save
+- **For Mac/Linux:** In terminal run: `chmod +x scripts/setup.sh`
+
+### File 38: `scripts/setup.bat`
+- Copy content from **BATCH 9** (setup.bat section)
+- Save
+
+---
+
+## Step 14: Tests
+
+**Right-click on `tests` folder** → New File:
+
+### File 39: `tests/__init__.py`
+- Copy content from **BATCH 10**
+- Save
+
+### File 40: `tests/test_data_cleaner.py`
+- Copy content from **BATCH 10**
+- Save
+
+### File 41: `tests/test_report_generator.py`
+- Copy content from **BATCH 10**
+- Save
+
+### File 42: `tests/test_system_health.py`
+- Copy content from **BATCH 10**
+- Save
+
+**Right-click on `tests/fixtures` folder** → New File:
+
+### File 43: `tests/fixtures/sample_data.csv`
+- Copy content from **BATCH 10**
+- Save
+
+---
+
+## Step 15: Documentation
+
+**Right-click on `docs` folder** → New File:
+
+### File 44: `docs/architecture.md`
+- Copy content from **BATCH 10**
+- Save
+
+### File 45: `docs/user_guide.md`
+- Copy content from **BATCH 10**
+- Save
+
+### File 46: `docs/api_reference.md`
+- Copy content from the API Reference artifact
+- Save
+
+---
+
+## Step 16: Setup Python Virtual Environment
+
+In the **VS Code Terminal**:
+
+### For Windows:
+```powershell
+# Create virtual environment
+python -m venv venv
+
+# Activate it
+.\venv\Scripts\Activate.ps1
+
+# If you get an error, run this first:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# Then try activating again
+.\venv\Scripts\Activate.ps1
+```
+
+### For Mac/Linux:
+```bash
+# Create virtual environment
+python3 -m venv venv
+
+# Activate it
+source venv/bin/activate
+```
+
+You should see `(venv)` at the start of your terminal prompt.
+
+---
+
+## Step 17: Install Dependencies
+
+With the virtual environment activated:
+
+```bash
+# Upgrade pip
+pip install --upgrade pip
+
+# Install production dependencies
+pip install -r requirements.txt
+
+# Install development dependencies (optional but recommended)
+pip install -r requirements-dev.txt
+```
+
+Wait for all packages to install...
+
+---
+
+## Step 18: Create Configuration Files
+
+### Create `.env` file:
+1. In VS Code Explorer, right-click root folder → New File → `.env`
+2. Copy content from `.env.example`
+3. **Edit with your actual values**:
+   ```
+   SMTP_USER=your-actual-email@gmail.com
+   SMTP_PASSWORD=your-app-password
+   ```
+4. Save
+
+### Create `config/config.yaml`:
+1. Right-click `config` folder → New File → `config.yaml`
+2. Copy content from `config/config.example.yaml`
+3. **Customize if needed**
+4. Save
+
+---
+
+## Step 19: Select Python Interpreter in VS Code
+
+1. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
+2. Type "Python: Select Interpreter"
+3. Choose the one that shows `./venv/bin/python` or `.\venv\Scripts\python.exe`
+
+---
+
+## Step 20: Test the Installation
+
+In the terminal (with venv activated):
+
+```bash
+# Run the main script
+python src/main.py --help
+```
+
+You should see the help message with all options!
+
+---
+
+## Step 21: Run Your First Automation
+
+### Create a test CSV file:
+1. Right-click `data/input` → New File → `test_data.csv`
+2. Add this content:
+```csv
+id,name,age,salary
+1,Alice,25,50000
+2,Bob,30,60000
+2,Bob,30,60000
+3,Charlie,35,
+4,Diana,28,55000
+```
+3. Save
+
+### Run the data cleaner:
+```bash
+python src/main.py --module data_cleaner
+```
+
+Check `data/output/cleaned/` for the cleaned file!
+
+---
+
+## Step 22: Initialize Git Repository
+
+In the terminal:
+
+```bash
+# Initialize git
+git init
+
+# Add all files
+git add .
+
+# Make first commit
+git commit -m "Initial commit: Operational Automation Tool"
+```
+
+---
+
+## Step 23: Push to GitHub
+
+1. **Go to GitHub.com** and create a new repository
+   - Name: `operational-automation-tool`
+   - Don't initialize with README (we already have one)
+
+2. **In VS Code terminal**, run these commands (replace with your repo URL):
+
+```bash
+# Add remote repository
+git remote add origin https://github.com/YOUR-USERNAME/operational-automation-tool.git
+
+# Push to GitHub
+git branch -M main
+git push -u origin main
+```
+
+---
+
+## Step 24: VS Code Extensions (Recommended)
+
+Install these VS Code extensions for better experience:
+
+1. **Python** (by Microsoft)
+   - Press `Ctrl+Shift+X`
+   - Search "Python"
+   - Click Install
+
+2. **Pylance** (by Microsoft)
+   - Search and install
+
+3. **autoDocstring** (generates docstrings)
+   - Search and install
+
+4. **GitLens** (better Git integration)
+   - Search and install
+
+---
+
+## Troubleshooting
+
+### Issue: "python command not found"
+**Solution**: Use `python3` instead of `python`
+
+### Issue: Can't activate virtual environment on Windows
+**Solution**: Run PowerShell as Administrator:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+### Issue: Import errors when running
+**Solution**: Make sure you're in the project root and venv is activated
+
+### Issue: Module not found errors
+**Solution**: Reinstall dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Quick Reference Commands
+
+```bash
+# Activate virtual environment
+# Windows:
+.\venv\Scripts\Activate.ps1
+# Mac/Linux:
+source venv/bin/activate
+
+# Run all modules
+python src/main.py
+
+# Run specific module
+python src/main.py --module data_cleaner
+
+# Run tests
+pytest tests/
+
+# Check code style
+flake8 src/
+
+# Format code
+black src/
+
+# Deactivate virtual environment
+deactivate
+```
+
+---
+
+## Next Steps
+
+1.  Customize `config/config.yaml` for your needs
+2.  Add your email settings in `.env`
+3.  Place your data files in `data/input/`
+4.  Run automations!
+5.  Check reports in `data/output/reports/`
+6.  Monitor logs in `data/logs/app.log`
+
+---
+
+## Project Structure Verification
+
+Your final structure should look like this:
+
+```
+operational-automation-tool/
+├── .github/
+│   └── workflows/
+│       ├── ci.yml
+│       └── python-tests.yml
+├── src/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── config/
+│   │   ├── __init__.py
+│   │   ├── settings.py
+│   │   └── logging_config.py
+│   ├── automation/
+│   │   ├── __init__.py
+│   │   ├── data_cleaner.py
+│   │   ├── report_generator.py
+│   │   └── system_health_checker.py
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── file_handler.py
+│   │   ├── validators.py
+│   │   └── email_notifier.py
+│   └── models/
+│       ├── __init__.py
+│       └── data_models.py
+├── tests/
+│   ├── __init__.py
+│   ├── test_data_cleaner.py
+│   ├── test_report_generator.py
+│   ├── test_system_health.py
+│   └── fixtures/
+│       └── sample_data.csv
+├── data/
+│   ├── input/
+│   ├── output/
+│   └── logs/
+├── docs/
+│   ├── architecture.md
+│   ├── user_guide.md
+│   └── api_reference.md
+├── scripts/
+│   ├── run_automation.py
+│   ├── setup.sh
+│   └── setup.bat
+├── config/
+│   ├── config.yaml
+│   └── config.example.yaml
+├── venv/ (created by you)
+├── .env
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── setup.py
+└── ... (other config files)
